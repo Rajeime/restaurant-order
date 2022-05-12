@@ -1,0 +1,45 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background-color:black;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
+    padding: 0;
+}
+
+header .logo{
+    padding: 0;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li{
+    padding: 0;
+    margin: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    margin: 0;
+}
+
+ul li a:hover{
+    background-color: grey;
+}
+
+form{
+  margin: 30px;
+}

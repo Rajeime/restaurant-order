@@ -8,40 +8,38 @@ const app = express();
 const db = require('./database/db');
 const homePage = require('./routes/index');
 const loginPage = require('./routes/login');
-const welcomePage = require('./routes/welcome')
+const welcomePage = require('./routes/welcome');
+const authentication = require('./routes/auth');
 
 // set views for each route destination page
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 // serve static files in public folder
-app.use(express.static(publicDirectory))
+app.use(express.static(publicDirectory));
 
 // parse body information used for post request
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// rouutes to different pages
+// routes to different pages for get requests
 app.use('/', homePage);
 app.use('/', loginPage);
 app.use('/', welcomePage); 
 
-app.post('/login',(req,res)=>{
-    var username = req.body.email;
-    var userpassword = req.body.password;
-    db.query("select * from loginadmin where user_email = ? and user_password = ?",[username, userpassword],(error, results,fields)=>{
-        if(results.length > 0){
-            res.redirect('welcome')
-            console.log(results.length)
-            // res.send('horay!')
-        }
+// post requests 
+app.use('/auth', authentication);
 
-        else{
-            res.redirect('/')
-        }
-        res.end()
-    })
-})
+// app.post('/signUp',(req,res)=>{
+//     const {username, email, password,confirmPassword,date} = req.body;
+//    db.query('INSERT INTO loginadmin SET ?' ,{user_email : email, user_password : password},(error, results)=>{
+//     if(error){
+//         console.log(error)
+//     }
+//     else{console.log(results)
+//         return res.render('signUp')}
+//    })
+// })
 
 app.listen(port,()=>{
     console.log('listening on port 8080')

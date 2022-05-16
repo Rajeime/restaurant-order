@@ -10,17 +10,49 @@
     <div class="surround">
         <% userData.forEach((item)=>{%>
             <div class="card">
-                <img src="<%= item.itemImage %> " alt="" style="width:100%; height: 50%;">
-                <h3><%= item.itemName %> </h3>
+                <img src="<%= item.itemImage %> " alt="" style="width:100%; height: 50%;" class="image">
+                <h3 class="prodName"><%= item.itemName %> </h3>
                 <p class="price"> $ <%= item.itemPrice %> </p>
-                <p class="product-id"><%= item.productId %></p>
+                <p class="product-id">#<%= item.productId %></p>
                 <button class="addButton">Add to cart</button>
             </div>
                 <% }) ;%>
     </div>       
+
+
+<!-- cart experiment -->
+<div class="cartItems">
+    <div class="cartItem">
+        <!-- <img src="<%= userData[0].itemImage %>" alt="">
+       <h4><%= userData[0].itemName %></h4>
+       <p class="cartItemprice"><%= userData[0].itemPrice %></p>
+       <input type="number" class="quantity">
+       <button class="rmBtn">Remove</button>
+    </div>
+
+    <div class="cartItem">
+        <img src="<%= userData[1].itemImage %>" alt="">
+        <h4><%= userData[1].itemName %></h4>
+        <p class="cartItemprice"><%= userData[1].itemPrice %></p>
+        <input type="number" class="quantity">
+        <button class="rmBtn">Remove</button>
+    </div>
+    <h4>Total:$<span class="total">600</span></h4> -->
+    <h4>Total:$<span class="total">600</span></h4>
+</div>
+
+
+
+
+
+
+
+
+
+
+
     <!-- cart modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
+    <!-- <div id="myModal" class="modal">
         <div class="modal-content">
         <span class="close">&times;</span>
         <form action="/auth/order" method="POST">
@@ -40,8 +72,9 @@
         </form>
         </div>
     
-    </div>
+    </div> -->
 </body>
 
 <script src="script.js"></script>
+
 </html>

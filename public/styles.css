@@ -112,6 +112,7 @@ h2{
     text-align: center;
     font-family: arial;
     background-color: white;
+    position: relative;
   }
 
 .price {
@@ -211,4 +212,39 @@ h2{
     background-color: green;
     border: none;
     text-transform: uppercase;
+}
+
+
+.product-id{
+    position: absolute;
+    top:-16px;
+    left: 0;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.807);
+    padding: 10px;
+}
+
+.cartItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.cartItem img{
+    height: 100px;
+    width: 100px;
+    border-radius: 4px;
+}
+
+.cartItem .quantity{
+    width: 40px;
+}
+
+.rmBtn{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
 }

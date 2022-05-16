@@ -8,7 +8,7 @@ router.get('/',(req,res)=>{
     db.query(sql ,(err, data, fields)=>{
     if(err) throw err;
     res.render('index',{userData:data});
-    // console.log(data)
+    console.log(data)
     })
     
 })
